@@ -79,8 +79,14 @@ int main()
 			change_dir((*seq)[1]);
 			continue;
 		}
-
-			
-		
+	}
+	
+	int status;
+	int pid = folk();
+	if (pid == 0) {
+		execvp(sep[0][0], seq[0]);
+	}
+	else {
+		waitpid(pid, $status, 0);
 	}
 }
